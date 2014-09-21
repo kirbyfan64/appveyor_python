@@ -1,6 +1,7 @@
 install:
-    - cinst pip
-    - pip install wheel
+    - ps: (new-object net.webclient).DownloadFile('https://raw.github.com/pypa/pip/master/contrib/get-pip.py', 'C:/get-pip.py')
+    - C:/Python34/python.exe C:/get-pip.py
+    - C:/Python34/Scripts/pip.exe install wheel
 build: off
 test_script:
     - py.test
