@@ -2,7 +2,7 @@ install:
     - ps: (new-object net.webclient).DownloadFile('https://raw.github.com/pypa/pip/master/contrib/get-pip.py', 'C:/get-pip.py')
     - C:/Python34/python.exe C:/get-pip.py
     - C:/Python34/Scripts/pip.exe install wheel
-    - C:/Python34/Scripts/pip.exe install py.test
+    - C:/Python34/Scripts/pip.exe install pytest
 build: off
 test_script:
     - py.test
