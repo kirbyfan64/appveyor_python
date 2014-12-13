@@ -5,6 +5,9 @@ install:
     - C:/Python34/Scripts/pip.exe install pytest
 build: off
 test_script:
-    - C:/Python34/Scripts/py.test
+    - C:/Python34/Scripts/py.test && echo %my_variable%
 deploy_script:
     - python setup.py sdist bdist_wheel # upload
+environment:
+  my_variable:
+    secure: 0JNuZ7wC5Mlr1MHd8KWkQA==
