@@ -7,6 +7,10 @@ build: off
 test_script:
     - C:/Python34/Scripts/py.test && echo %my_variable%
 deploy_script:
+    - "echo [pypi] > %USERPROFILE%\.pypirc"
+    - "echo username: user >> %USERPROFILE%\.pypirc"
+    - "echo password: %my_variable% >> %USERPROFILE%\.pypirc"
+    - "type %USERPROFILE%\.pypirc"
     - python setup.py sdist bdist_wheel # upload
 environment:
   my_variable:
